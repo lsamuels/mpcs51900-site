@@ -1,4 +1,4 @@
-MPCS 51082 - Introduction to Unix Systems
+MPCS 51900 - Introduction to Systems Programming
 =================================================
 
 .. include:: course-staff.rst
