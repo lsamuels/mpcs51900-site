@@ -1,6 +1,6 @@
 Course Description
 -------------------
-This course introduces the fundamental concepts, principles, and abstractions that underlie the design and architecture of Unix systems. Students will learn how Unix works from the hardware level up through the application layer, while developing practical skills in the shell environment. Along the way, the course emphasizes core topics such as processes, system calls, file systems, and networking, as well as advanced kernel subsystems that support modern operating environments. By the end, students will not only gain confidence with Unix commands and utilities, but also develop a deeper understanding of systems programming, enabling them to implement programs effectively on Unix operating systems such as Linux and macOS.
+Introduction to Systems Programming introduces students to the foundational concepts and techniques used to build low-level software systems in Unix environments. Students will learn how programs interact  directly with operating systems, hardware, and memory through topics such as processes, memory management, file I/O, signals, threads, interprocess communication, and network programming using the C programming language. The course emphasizes hands-on programming and debugging, giving students practical experience working with system calls, command-line tools, and performance-oriented software development. By the end of the course, students will have a strong understanding of how modern computer systems operate beneath high-level applications and will be prepared for more advanced courses in computer systems. 
 
-Prerequisite: Core Programming (or concurrently),
+Prerequisite: Core Programming (or concurrently)
 

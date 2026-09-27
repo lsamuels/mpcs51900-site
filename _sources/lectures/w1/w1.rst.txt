@@ -1,0 +1,48 @@
+M1: Introduction to Systems Programming and C Basics 
+-----------------------------------------------------
+This week we start with why systems programming matters and why C is the
+language for it. We then cover how a C program goes from source code to a
+running executable, and move quickly through C syntax. Since you already know
+how to program, we focus on the places where C differs from languages like
+Python and Java.
+
+Topics
+=======
+
+* What systems programming is, and what you'll build this quarter
+* Why C: low-level vs. high-level languages
+* The structure of a C program, compiling with ``gcc``, and what each
+  compilation stage does
+* Compiler warnings: what they mean and why we treat them as bugs
+* Static typing, primitive types, and type sizes
+* Input and output with ``printf`` and ``scanf``
+* Operators, control flow, and functions
+* Arrays, structs, ``typedef``, and strings
+
+
+Pre-recorded Lectures
+======================
+**Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week for a module.**
+
+The pre-recorded lectures are available here: `M1 Videos <>`_.
+
+... 
+
+Resources/Readings 
+-------------------
+For this module, your focus should be to learn the basic syntax of the shell scripting.
+
+*  KNN, *C Programming: A Modern Approach*, chapters 1-9, 13.1-13.5,16.1-16.3
+
+Synchronous Sessions (In-person Lecture) 
+-----------------------------------------
+As a reminder here are the dates and times for the synchronous session for this module:
+
+Week 1 
+~~~~~~~
+- Dates/Times
+   -  Section 1: **Tuesday September 29th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday September 30th 2:30pm-5:20pm** 
+- Session Outline 
+   - Course logistics and systems programming overview
+   - C Basics

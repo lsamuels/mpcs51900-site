@@ -1,5 +1,5 @@
 =======================
-Calendar - Winter 2026
+Calendar - Autumn 2026
 =======================
 
 .. warning::
@@ -12,14 +12,14 @@ In general, assignments are posted on Tuesday preceding their deadline.
    :widths: 5, 55, 20, 20
    :header-rows: 1
 
-    Week, Module, Assignment Out, Assignment Due  
-    1, M1: Unix Shell, HW 1 , None  
-    2, M1: Unix Shell, HW 2,  HW 1 
-    3, M1: Unix Shell, Hw 3 ,HW 2
-    4, M2: Unix Processes & Management, HW 4,  HW 3
-    5, M2: Unix Processes & Management, HW 5, HW 4   
-    6, M3: Interacting with the Unix Kernel, HW 6, HW 5  
-    7, M3: Interacting with the Unix Kernel, Project, HW 6
-    8, **Quarter Exam** and  M4: Advance Kernel Subsystems, None, None 
-    9, M4: Advance Kernel Subsystems, None, None
-    10, (Finals Week), None, Project
+    Week, Topic, Assignment Out, Assignment Due  
+    1, Introduction to systems programming and C basics, HW 1, None
+    2, C continued and pointer basics, HW 2, HW 1 
+    3, "**Quiz 1**, Memory model and memory bugs", HW 3 ,HW 2
+    4, Memory hierarchy (caches/locality and virtual memory), HW 4,  HW 3
+    5, System Calls, HW 5, HW 4   
+    6, "**Midterm Exam**, File I/O", HW 6, HW 5  
+    7, Processes,  HW 7, HW 6
+    8, "**Quiz 2**, Signals", HW 8, HW 7
+    9,  Introduction to Concurrency, None, HW 8
+    10, **Final Exam**, None, None 

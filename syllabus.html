@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Syllabus &#8212; MPCS 51082 - Introduction to Unix Systems  documentation</title>
+    <title>Syllabus &#8212; MPCS 51900 - Introduction to Systems Programming  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="_static/chiweb.css?v=9805d56b" />
@@ -37,7 +37,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.html">
-          MPCS 51082</a>
+          MPCS 51900</a>
         <span class="navbar-text navbar-version pull-left"><b></b></span>
       </div>
 
@@ -46,8 +46,7 @@
             
                 <li><a href="#">Syllabus</a></li>
                 <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="modules/index.html">Modules</a></li>
-                <li><a href="assignments/index.html">Assignments</a></li>
+                <li><a href="lectures/index.html">Lectures</a></li>
                 <li><a href="office-hours.html">Office Hours</a></li>
                 <li><a href="https://uchicago-cs.github.io/student-resource-guide/">CS Student Resources</a></li>
             
@@ -96,12 +95,17 @@
 <li><a class="reference internal" href="#course-description">Course Description</a></li>
 <li><a class="reference internal" href="#course-staff">Course Staff</a></li>
 <li><a class="reference internal" href="#course-structure">Course Structure</a><ul>
-<li><a class="reference internal" href="#coursework">Coursework</a></li>
-<li><a class="reference internal" href="#exams">Exams</a></li>
-<li><a class="reference internal" href="#course-software">Course Software</a></li>
+<li><a class="reference internal" href="#lecture-format">Lecture Format</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#coursework">Coursework</a><ul>
+<li><a class="reference internal" href="#assignment-rubric">Assignment Rubric</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quizzes-and-exams">Quizzes and Exams</a></li>
+<li><a class="reference internal" href="#course-software">Course Software</a></li>
 <li><a class="reference internal" href="#grading">Grading</a><ul>
+<li><a class="reference internal" href="#final-grade-boundaries">Final Grade Boundaries</a></li>
 <li><a class="reference internal" href="#late-submissions">Late submissions</a></li>
 <li><a class="reference internal" href="#regrades">Regrades</a></li>
 </ul>
@@ -110,10 +114,10 @@
 <li><a class="reference internal" href="#policies">Policies</a><ul>
 <li><a class="reference internal" href="#policy-on-academic-honesty">Policy on academic honesty</a></li>
 <li><a class="reference internal" href="#policy-on-generative-ai">Policy on Generative AI</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#diversity-statement">Diversity statement</a></li>
 <li><a class="reference internal" href="#disability-statement">Disability statement</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -130,8 +134,8 @@
 </div>
 <section id="course-description">
 <h2>Course Description<a class="headerlink" href="#course-description" title="Link to this heading">¶</a></h2>
-<p>This course introduces the fundamental concepts, principles, and abstractions that underlie the design and architecture of Unix systems. Students will learn how Unix works from the hardware level up through the application layer, while developing practical skills in the shell environment. Along the way, the course emphasizes core topics such as processes, system calls, file systems, and networking, as well as advanced kernel subsystems that support modern operating environments. By the end, students will not only gain confidence with Unix commands and utilities, but also develop a deeper understanding of systems programming, enabling them to implement programs effectively on Unix operating systems such as Linux and macOS.</p>
-<p>Prerequisite: Core Programming (or concurrently),</p>
+<p>Introduction to Systems Programming introduces students to the foundational concepts and techniques used to build low-level software systems in Unix environments. Students will learn how programs interact  directly with operating systems, hardware, and memory through topics such as processes, memory management, file I/O, signals, threads, interprocess communication, and network programming using the C programming language. The course emphasizes hands-on programming and debugging, giving students practical experience working with system calls, command-line tools, and performance-oriented software development. By the end of the course, students will have a strong understanding of how modern computer systems operate beneath high-level applications and will be prepared for more advanced courses in computer systems.</p>
+<p>Prerequisite: Core Programming (or concurrently)</p>
 </section>
 <section id="course-staff">
 <h2>Course Staff<a class="headerlink" href="#course-staff" title="Link to this heading">¶</a></h2>
@@ -140,103 +144,168 @@
 <li><p><a class="reference external" href="https://lsamuels.github.io">Lamont Samuels</a></p></li>
 </ul>
 <p><strong>Teaching Assistants</strong></p>
+<ul class="simple">
+<li><p>Nalin Annapareddy</p></li>
+<li><p>Akshat Singhania</p></li>
+</ul>
+<p><strong>Graders</strong></p>
+<ul class="simple">
+<li><p>Aniket Agrawal</p></li>
+<li><p>Ashwin Balaraman</p></li>
+</ul>
 </section>
 <section id="course-structure">
 <h2>Course Structure<a class="headerlink" href="#course-structure" title="Link to this heading">¶</a></h2>
-<p>The course material will be split into six modules that will span 1-2 weeks through out the quarter. Each module looks at a different phase of a compiler and explores its functionality and importance in the system:</p>
+<p>The course is organized as week-by-week lectures that build on one another, starting with the C language and working down toward how programs interact with memory and the operating system:</p>
 <ul class="simple">
-<li><p>M1: The Unix Shell (Week 1-2): Learn how to interact with Unix through the command line, mastering essential commands, syntax, and scripting basics.</p></li>
-<li><p>M2: Unix Processes and Management(Week 3 - 4): Look at the internal structures of programs and processes in Unix and how they are managed.</p></li>
-<li><p>M3: Interacting with the Unix Kernel(Week 5-6): Explore how user programs communicate with the kernel through system calls and how the kernel manages resources.</p></li>
-<li><p>M4: Advanced Kernel Subsystems (Week 9): Examine advanced features such as memory management, file systems, networking, device drivers.</p></li>
-</ul>
-<p>The delivery of the course content will follow a flipped classroom model, where lecture material and course content will be provided in two ways:</p>
-<ul class="simple">
-<li><p><strong>Synchronous content</strong> (<em>i.e., in-person</em>): Each week during our normal class time, we will meet in person at the time and location designated above. The synchronous sessions will include:</p>
-<ul>
-<li><p>An introduction to the material and topics for the current week’s module.</p></li>
-<li><p>An opportunity to ask questions about the content provided in the videos from the prior week.</p></li>
-<li><p>Live coding sessions and activities related to the material covered in the current week’s module.</p></li>
-</ul>
-</li>
-<li><p><strong>Asynchronous content</strong> (<em>i.e., pre-recorded videos and readings</em>): Each week after class, you will be required to watch pre-recorded videos and complete assigned readings for the current module. The videos will cover lecture content that would normally be delivered in a traditional in-person setting. These videos and readings will typically range between 1 and 1.5 hours and will be posted after our scheduled class time. You are encouraged to view them at your convenience; however, you must watch the videos before the following week’s class. I will also aim to post readings for the next module in advance, in case you would like to preview upcoming topics.</p></li>
+<li><p><strong>Weeks 1-2: C Programming Foundations:</strong> Learn the C language, including compilation with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>, basic syntax, types, functions, pointers, arrays, and strings.</p></li>
+<li><p><strong>Week 3: The C Memory Model:</strong> Look at how a running program is laid out in memory (stack, heap, and static data), how dynamic memory is managed, and how to find and fix common memory bugs.</p></li>
+<li><p><strong>Week 4: The Memory Hierarchy:</strong> Get a high-level view of how memory is organized in a modern system, including caches, locality, and virtual memory, and how they affect program performance.</p></li>
+<li><p><strong>Week 5: System Calls:</strong> Explore how user programs request services from the kernel through system calls.</p></li>
+<li><p><strong>Week 6: File I/O:</strong> Use system calls to read, write, and manage files.</p></li>
+<li><p><strong>Week 7: Processes:</strong> Study how the operating system creates and manages processes.</p></li>
+<li><p><strong>Week 8: Signals:</strong> Learn how processes are notified of and respond to events through signals.</p></li>
+<li><p><strong>Week 9: Introduction to Concurrency:</strong> Examine the basics of running multiple tasks at once and the problems that arise when they share resources.</p></li>
 </ul>
 <p>Please see the <a class="reference external" href="calendar.html">calendar</a> for more details on what happens on a week to week basis.</p>
-<section id="coursework">
-<h3>Coursework<a class="headerlink" href="#coursework" title="Link to this heading">¶</a></h3>
-<p>The course will include weekly homework, one midterm exam, attendance and projects:</p>
+<section id="lecture-format">
+<h3>Lecture Format<a class="headerlink" href="#lecture-format" title="Link to this heading">¶</a></h3>
+<p>This course uses a partially flipped classroom. We have three hours of class time each week, but not every week will be flipped. Some weeks we will use the full three hours in person, and other weeks lecture will end early and the remaining material will be covered in pre-recorded videos. The course schedule will be updated accordingly.</p>
+<ul class="simple">
+<li><p><strong>Synchronous content</strong> (<em>i.e., in-person</em>): Each week we will meet in person at the time and location designated above. The in-person sessions will include:</p>
 <ul>
-<li><p><strong>Homework</strong> - The weekly homework assignments will contain practice problems to help enforce the concepts learned during a lecture.</p></li>
-<li><p><strong>Milestones</strong> - The course work for the second half of the course revolves around building a course project in two parts. Each part of the project is represented as a milestone. Details about the course project and its parts will be presented by the instructor later in the course.</p></li>
-<li><dl>
-<dt><strong>Attendance</strong> - In order to receive you full attendance weight, you must do the following</dt><dd><ol class="arabic simple">
-<li><p>Attend every lecture (either in-person or remotely). If you cannot attend a lecture then you must reach out to the instructor letting them know you won’t be able to attend.</p></li>
-<li><p>You must watch any specified pre-recorded lectures. We will look at the statistics on Panopto to ensure you watch the videos.</p></li>
-</ol>
-<p>As long as you continuously do those two main points you will receive full credit for attendance.</p>
-</dd>
-</dl>
-</li>
-<li><p><strong>Exam</strong> - There will be one exam in the course. Please see the <em>Exams</em> section for more details.</p></li>
+<li><p>Lecture on the material and topics for the current week.</p></li>
+<li><p>An opportunity to ask questions about the videos from the prior week.</p></li>
+<li><p>Live coding demonstrations related to the current week’s material.</p></li>
 </ul>
-<p>All homework will be due and out on <strong>Wednesday &#64; 11:59pm</strong>.</p>
-<p>Please see the <a class="reference external" href="assignments/index.html">Assignments Rubric</a> page for
-more details on how the assignments will be graded.</p>
+</li>
+<li><p><strong>Asynchronous content</strong> (<em>i.e., pre-recorded videos</em>): In weeks where lecture ends early, the remaining lecture content will be posted as pre-recorded videos after our class time. These will typically be about an hour long. You can watch them at your convenience, but you must watch them before the following week’s class. Watching these videos counts toward your attendance grade.</p></li>
+</ul>
+<p>Suggested readings from the optional textbooks will also be posted each week on week numbers page, in case you want extra clarification or would like to preview upcoming topics.</p>
 </section>
-<section id="exams">
-<h3>Exams<a class="headerlink" href="#exams" title="Link to this heading">¶</a></h3>
-<p>There will be one exam in this course. The exam will be a mixture of coding exercises and short-answer questions. The exam will be in-person during our normal classroom time.</p>
+</section>
+<section id="coursework">
+<h2>Coursework<a class="headerlink" href="#coursework" title="Link to this heading">¶</a></h2>
+<p>The course will include weekly homework, two quizzes, a midterm exam, a final exam, and attendance:</p>
+<ul>
+<li><p><strong>Homework</strong> - Weekly homework assignments (Weeks 1-8) will contain programming problems that reinforce the concepts covered in lecture. Some assignments build on previous ones, so make sure each one is working before moving on. There is no homework in Week 9; instead, you will be given practice problems to help you prepare for the final exam. All homework will be due and out on <strong>Friday &#64; 11:59pm</strong>.</p></li>
+<li><p><strong>Quizzes</strong> - There will be two short (10-15 minute) quizzes at the start of class in Weeks 3 and 8. The quizzes are based directly on your homework and are meant to verify that you completed the assignments yourself.</p></li>
+<li><p><strong>Attendance</strong> - In order to receive your full attendance weight, you must do the following:</p>
+<ol class="arabic simple">
+<li><p>Attend every lecture in person. If you cannot attend a lecture, you must reach out to the instructor ahead of time letting them know you won’t be able to attend.</p></li>
+<li><p>Watch the pre-recorded lecture material for each week. We will look at the statistics on Panopto to ensure you watch the videos.</p></li>
+</ol>
+<p>As long as you consistently do those two things, you will receive full credit for attendance.</p>
+</li>
+<li><p><strong>Exams</strong> - There will be two exams in the course: a midterm in Week 6 and a final during finals week (Week 10). Please see the <em>Exams</em> section for more details.</p></li>
+</ul>
+<section id="assignment-rubric">
+<h3>Assignment Rubric<a class="headerlink" href="#assignment-rubric" title="Link to this heading">¶</a></h3>
+<p>The following general rubric will be used to grade your coding problems in your homework and projects. The rubric
+allows for more transparency on how your assignments are graded. Short answer questions and written work will be more subjective.</p>
+<ul>
+<li><p><strong>Completeness</strong>: This score will be determined by the result of running a series of automated tests on your code. The tests check whether your code implements the tasks we ask you to implement in the assignment and, thus, are a good measure of how <em>complete</em> your code is. Completeness is an <strong>all or nothing</strong> grading item. This means that there will be no partial credit for this section. Either you pass the tests or you do not.</p></li>
+<li><p><strong>Correctness</strong>: This score encompasses issues with your code that, while not explicitly captured by the tests, could lead to incorrect behavior (or simply neglect to implement something we told you to implement).</p>
+<p>We will usually provide you some hints on what we will be looking out for in this component of the rubric. Please note that this section of the rubric will never re-penalize you for a failure that is already captured by the tests. So, if your code fails to implement something we told you to implement, but that is already captured by the tests, we would not re-penalize you here.</p>
+</li>
+<li><p><strong>Design &amp; Style</strong>: This score will be determined by “qualities, many of which are intangible, that don’t have to do with (and exist to some extent independently of) the correct operation of your code.” (thanks to Adam Shaw for this concise phrasing). For example, in many assignments you will have to decompose your code into multiple functions, where that decomposition is up to you. Whether your decomposition makes sense and is well designed would be evaluated in this score.</p>
+<p>For style, we will generally be looking at the following:</p>
+<ul class="simple">
+<li><p><em>Documenting functions</em>: Every top-level function written by you must have a comment documenting its purpose.</p></li>
+<li><p><em>Clarity</em>: Your code must be easy to read and understand. This is a fairly subjective aspect, but common deductions for lack of clarity include using variables without descriptive names, writing convoluted code that would be easier to understand with more code comments, using magic numbers, etc.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="quizzes-and-exams">
+<h2>Quizzes and Exams<a class="headerlink" href="#quizzes-and-exams" title="Link to this heading">¶</a></h2>
+<p>There will be two quizzes and two exams in this course. All quizzes and exams are held in person, in our normal lecture room, at the start of your section’s regular class time. Please arrive at least 5 minutes early to ensure you are seated and ready to begin. We will not provide addtional time for late arrivals. More information about the content and format of the quizzes and exams will be provided in closer to the respective dates.</p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Exam</p></th>
+<tr class="row-odd"><th class="head"><p>Assessment</p></th>
 <th class="head"><p>Time Limit</p></th>
 <th class="head"><p>Date</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Quarter Exam</p></td>
-<td><p>120 minutes</p></td>
-<td><p><strong>February 24th &#64; 7:30pm</strong></p></td>
+<tr class="row-even"><td><p>Quiz 1</p></td>
+<td><p>15 minutes</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Tuesday Section: October 13th &#64; 5:30pm</strong></div>
+<div class="line"><strong>Wednesday Section: October 14th &#64; 2:30pm</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Midterm Exam</p></td>
+<td><p>60 minutes</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Tuesday Section: November 3rd &#64; 5:30pm</strong></div>
+<div class="line"><strong>Wednesday Section: November 4th &#64; 2:30pm</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Quiz 2</p></td>
+<td><p>15 minutes</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Tuesday Section: November 17th &#64; 5:30pm</strong></div>
+<div class="line"><strong>Wednesday Section: November 18th &#64; 2:30pm</strong></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Final Exam</p></td>
+<td><p>90 minutes</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Tuesday Section: December 8th &#64; 5:30pm</strong></div>
+<div class="line"><strong>Wednesday Section: December 9th &#64; 2:30pm</strong></div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
-<p>The exam location is in our normal classroom at the same time. There are no make-up exam in this class. There also will not be any earlier exam taken unless due to extraordinary circumstances such as an medical emergency.</p>
+<p>The exams are cumulative, but each one focuses on the material covered since the previous quiz or exam.</p>
+<p>There are no make-up quizzes or exams in this course unless you have a medical emergency with documentation. Interviews and other job-related events do not count, so please mark these dates on your calendar now and plan to attend.</p>
 </section>
 <section id="course-software">
-<h3>Course Software<a class="headerlink" href="#course-software" title="Link to this heading">¶</a></h3>
-<p>Bash and C will be the <strong>required</strong> language to code all programming assignment. You do not need to know the language in order to take this course.
-If you haven’t already learned it then you will learn it as the course progresses. I will provide a rationale for the languages during the
-first lecture. <strong>Please note this not a C programming class</strong>. We will learn just enough of the C language to see how we can use it to to
-develop applications that interacts with a Unix system.</p>
-<p>Please make sure you have following software installed for this course:</p>
+<h2>Course Software<a class="headerlink" href="#course-software" title="Link to this heading">¶</a></h2>
+<p>C is the <strong>required</strong> language for all programming assignments. You do not need to know C before taking this course; you will learn it as the course progresses, and I will explain why we use C during the first lecture. <strong>Please note this is not a C programming class.</strong> We will learn enough of the language to understand how programs interact with memory and the operating system, but we will not cover every corner of C.</p>
+<p>Please make sure you have the following software installed for this course:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://clang.llvm.org">Clang</a> If you are running on macOS or linux then you already have this installed. If you are running a Windows machine then you’ll need to download a C compiler.</p></li>
-<li><p><a class="reference external" href="http://git-scm.com/downloads/">Git</a></p></li>
+<li><p><strong>A C compiler.</strong> <a class="reference external" href="https://gcc.gnu.org">GCC</a> is preferred. On macOS, the default compiler is <a class="reference external" href="https://clang.llvm.org">Clang</a>, which is fine for this course (run <code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code> if it is not already installed). Most Linux distributions include GCC. On Windows, we recommend installing <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> and using GCC inside it.</p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Git</a></p></li>
 <li><p>Text editor (suggestion, not required): <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a></p></li>
 <li><p>IDE (suggestion, not required): <a class="reference external" href="https://www.jetbrains.com/clion/">CLion</a></p></li>
 </ul>
-<p>The course software is also accessible via logging in remotely to a CS Linux Machine. We will explain how to do this during the first week of the quarter.</p>
-</section>
+<p>Each student will be given access to a course repository, which you will use to submit your homework. More details will be provided during the first week of the quarter.</p>
+<p>The course software is also available by logging in remotely to a CS Linux machine. We will explain how to do this during the first week of the quarter.</p>
 </section>
 <section id="grading">
 <h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">¶</a></h2>
 <p>Your final grade will be based on the following:</p>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p>Homework 1-6 (5% each)</p></td>
+<tr class="row-odd"><td><p>Homework</p></td>
 <td><p>30%</p></td>
 </tr>
-<tr class="row-even"><td><p>Project</p></td>
-<td><p>25%</p></td>
+<tr class="row-even"><td><p>Quiz 1</p></td>
+<td><p>5%</p></td>
 </tr>
-<tr class="row-odd"><td><p>Quarter Exam</p></td>
-<td><p>40%</p></td>
+<tr class="row-odd"><td><p>Quiz 2</p></td>
+<td><p>5%</p></td>
+</tr>
+<tr class="row-even"><td><p>Midterm Exam</p></td>
+<td><p>20%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Final Exam</p></td>
+<td><p>30%</p></td>
 </tr>
 <tr class="row-even"><td><p>Attendance</p></td>
 <td><p>5%</p></td>
 </tr>
 </tbody>
 </table>
+<section id="final-grade-boundaries">
+<h3>Final Grade Boundaries<a class="headerlink" href="#final-grade-boundaries" title="Link to this heading">¶</a></h3>
 <p>Grades are <em>not</em> curved in this class or, at least, not in the traditional sense.
 We use a standard set of grade boundaries:</p>
 <ul class="simple">
@@ -254,6 +323,7 @@ boundaries in response to the distribution.</p>
 <p>So, for example, if you have a total score of 82 in the course, you are guaranteed
 to get, at least, a B (but may potentially get a higher grade if the boundary for
 a B+ is lowered).</p>
+</section>
 <section id="late-submissions">
 <span id="id1"></span><h3>Late submissions<a class="headerlink" href="#late-submissions" title="Link to this heading">¶</a></h3>
 <p>You are allowed to make <strong>at most two</strong> late submissions on the programming assignments. You are allowed to make <strong>at most two</strong>
@@ -323,17 +393,13 @@ ending up with a lower score on the assignment.</p>
 </section>
 <section id="books">
 <h2>Books<a class="headerlink" href="#books" title="Link to this heading">¶</a></h2>
-<p>This course will not have a required textbook; although, for those students who may find it helpful to know
-the topics we will discuss each week, readings will come from the text:</p>
+<p>This course does not have a required textbook. The books below are optional and are meant to help clarify anything that was confusing in class. Each week I will list suggested readings from them on the week’s schedule.</p>
 <ul class="simple">
-<li><p><em>The Linux Programming Interface: A Linux and UNIX System Programming Handbook by Michael Kerrisk</em></p></li>
-<li><p><em>Computer Systems: A Programmer’s Perspective (3rd Edition) by Bryant, &amp; Randal O’Hallaron</em></p></li>
+<li><p><em>C Programming: A Modern Approach, 2nd Edition</em> by K. N. King</p></li>
+<li><p><em>Advanced Programming in the UNIX Environment, 3rd Edition</em> by W. Richard Stevens and Stephen A. Rago</p></li>
 </ul>
-<p>and will be shown on the course schedule. Along with these readings and the lecture notes, students may
-find the following references helpful in understanding the course material:</p>
-<ul class="simple">
-<li><p><em>C Programming: A Modern Approach, 2nd Edition by K. N. King</em></p></li>
-</ul>
+<p>King’s book covers the C portion of the course, and APUE covers system calls, file I/O, processes, and signals.</p>
+<p>These books are recommended for students who want to deepen their understanding of the course material and are available in the library or online.</p>
 </section>
 <section id="policies">
 <h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">¶</a></h2>
@@ -344,19 +410,26 @@ read our <a class="reference external" href="honesty.html">Academic Honesty</a> 
 </section>
 <section id="policy-on-generative-ai">
 <h3>Policy on Generative AI<a class="headerlink" href="#policy-on-generative-ai" title="Link to this heading">¶</a></h3>
-<p>Using generative AI tools should be viewed as a means to enhance learning and explore new avenues, rather than as a substitute for rigorous study and practice. While generative AI tools can assist in generating content,
-you are expected to have a clear understanding of the concepts being explored, the generated output, and its accuracy. Relying solely on AI-generated content without understanding the underlying principles is discouraged.
-Assessments and exams are designed to evaluate your understanding of concepts and problem-solving skills. Relying solely on AI tools for assessment preparation may hinder your mastery of essential skills.</p>
-<p>Specifically, you are allowed to use Generative AI in this course as long as correct citation is provide:</p>
+<p>You may use generative AI tools (ChatGPT, Claude, Copilot, etc.) in this course <strong>as a tutor only</strong>. Good uses include:</p>
 <ul class="simple">
-<li><p>The use of AI tools, such as ChatGPT or Dall-E 2, for this course is allowed for specific assignments only when determined to be in support of the course learning goals. Assignments in which AI tools are permitted will be clearly identified by the instructor and noted in the assignment directions. You are not required to use AI tools, but if you choose to use them for any part of the assignment (from brainstorming to text editing), you must use proper citation (please use <a class="reference external" href="https://apastyle.apa.org/blog/how-to-cite-chatgpt">APA citation format</a>  ). Failure to properly cite AI tools is considered a violation of the University of Chicago’s Academic Honesty and Plagiarism policy. If you are unclear if something is an AI Tool, please check with your instructor.  (CCTL, UChicago)</p></li>
+<li><p>Asking it to explain a topic from lecture that you did not understand.</p></li>
+<li><p>Asking how a C construct works, such as pointer arithmetic or a <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p></li>
+<li><p>Asking what a library function or system call does and how it is typically used.</p></li>
 </ul>
-<p><strong>Improperly citing or no citation when a Generative AI resource was used in assignment will be treated as an academic misconduct case.</strong></p>
-<p>The Generative AI policy comes from the hardwork of the <em>Citation: Generative AI: Policy Guidance for MPCS Faculty</em> group.</p>
-</section>
+<p>You are <strong>not</strong> permitted to have AI implement any portion of your work. This includes writing, completing, fixing, or rewriting your code.</p>
+<p>If you use a function or technique you learned about from AI or any other online source, you must cite it in a comment at the top of the file where it is used. For example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Sources:</span>
+<span class="cm"> *   - Claude: asked how strtok() splits a string on a delimiter.</span>
+<span class="cm"> *   - https://man7.org/linux/man-pages/man3/strtok.3.html</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<p>Keep in mind that the quizzes and exams are in person, without AI, and are closely tied to the homework. If AI did the thinking for you on an assignment, it will show on the exams.</p>
+<p><strong>Failure to follow this policy, including using AI to implement your work or not citing an outside source, will result in a 0% on that assignment and/or an F in the course, and will be reported as academic misconduct under the University of Chicago’s Academic Honesty and Plagiarism policy.</strong></p>
 </section>
 <section id="diversity-statement">
-<h2>Diversity statement<a class="headerlink" href="#diversity-statement" title="Link to this heading">¶</a></h2>
+<h3>Diversity statement<a class="headerlink" href="#diversity-statement" title="Link to this heading">¶</a></h3>
 <p>The University of Chicago is committed to diversity and rigorous
 inquiry that arises from multiple perspectives. We concur with that
 commitment and also believe that we have the highest quality
@@ -375,10 +448,11 @@ roster, or preferred gender pronouns you would like us to use, please
 let us know.</p>
 </section>
 <section id="disability-statement">
-<h2>Disability statement<a class="headerlink" href="#disability-statement" title="Link to this heading">¶</a></h2>
+<h3>Disability statement<a class="headerlink" href="#disability-statement" title="Link to this heading">¶</a></h3>
 <p>If there are circumstances that make our learning environment and
 activities difficult, please let us know. We will maintain the
 confidentiality of any such discussions.</p>
+</section>
 </section>
 </section>
 
@@ -394,7 +468,7 @@ confidentiality of any such discussions.</p>
       
     </p>
     <p>
-        &copy; Copyright 2021-2025, University of Chicago.<br/>
+        &copy; Copyright 2026, University of Chicago.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/>
     </p>
   </div>

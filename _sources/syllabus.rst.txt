@@ -13,74 +13,112 @@ Syllabus
 
 
 Course Structure
-----------------
-The course material will be split into six modules that will span 1-2 weeks through out the quarter. Each module looks at a different phase of a compiler and explores its functionality and importance in the system: 
+-----------------
+The course is organized as week-by-week lectures that build on one another, starting with the C language and working down toward how programs interact with memory and the operating system:
 
-- M1: The Unix Shell (Week 1-2): Learn how to interact with Unix through the command line, mastering essential commands, syntax, and scripting basics.
-- M2: Unix Processes and Management(Week 3 - 4): Look at the internal structures of programs and processes in Unix and how they are managed. 
-- M3: Interacting with the Unix Kernel(Week 5-6): Explore how user programs communicate with the kernel through system calls and how the kernel manages resources. 
-- M4: Advanced Kernel Subsystems (Week 9): Examine advanced features such as memory management, file systems, networking, device drivers. 
-The delivery of the course content will follow a flipped classroom model, where lecture material and course content will be provided in two ways:
-
-- **Synchronous content** (*i.e., in-person*): Each week during our normal class time, we will meet in person at the time and location designated above. The synchronous sessions will include:
-
-  - An introduction to the material and topics for the current week's module.
-  - An opportunity to ask questions about the content provided in the videos from the prior week.
-  - Live coding sessions and activities related to the material covered in the current week's module.
-
-- **Asynchronous content** (*i.e., pre-recorded videos and readings*): Each week after class, you will be required to watch pre-recorded videos and complete assigned readings for the current module. The videos will cover lecture content that would normally be delivered in a traditional in-person setting. These videos and readings will typically range between 1 and 1.5 hours and will be posted after our scheduled class time. You are encouraged to view them at your convenience; however, you must watch the videos before the following week’s class. I will also aim to post readings for the next module in advance, in case you would like to preview upcoming topics.  
+- **Weeks 1-2: C Programming Foundations:** Learn the C language, including compilation with ``gcc``, basic syntax, types, functions, pointers, arrays, and strings.
+- **Week 3: The C Memory Model:** Look at how a running program is laid out in memory (stack, heap, and static data), how dynamic memory is managed, and how to find and fix common memory bugs.
+- **Week 4: The Memory Hierarchy:** Get a high-level view of how memory is organized in a modern system, including caches, locality, and virtual memory, and how they affect program performance.
+- **Week 5: System Calls:** Explore how user programs request services from the kernel through system calls.
+- **Week 6: File I/O:** Use system calls to read, write, and manage files.
+- **Week 7: Processes:** Study how the operating system creates and manages processes.
+- **Week 8: Signals:** Learn how processes are notified of and respond to events through signals.
+- **Week 9: Introduction to Concurrency:** Examine the basics of running multiple tasks at once and the problems that arise when they share resources.
 
 Please see the `calendar <calendar.html>`__ for more details on what happens on a week to week basis.
 
+Lecture Format
+==============
+
+This course uses a partially flipped classroom. We have three hours of class time each week, but not every week will be flipped. Some weeks we will use the full three hours in person, and other weeks lecture will end early and the remaining material will be covered in pre-recorded videos. The course schedule will be updated accordingly.
+
+- **Synchronous content** (*i.e., in-person*): Each week we will meet in person at the time and location designated above. The in-person sessions will include:
+
+  - Lecture on the material and topics for the current week.
+  - An opportunity to ask questions about the videos from the prior week.
+  - Live coding demonstrations related to the current week's material.
+
+- **Asynchronous content** (*i.e., pre-recorded videos*): In weeks where lecture ends early, the remaining lecture content will be posted as pre-recorded videos after our class time. These will typically be about an hour long. You can watch them at your convenience, but you must watch them before the following week's class. Watching these videos counts toward your attendance grade.
+
+Suggested readings from the optional textbooks will also be posted each week on week numbers page, in case you want extra clarification or would like to preview upcoming topics.
+
+
 Coursework
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------
+The course will include weekly homework, two quizzes, a midterm exam, a final exam, and attendance:
 
-The course will include weekly homework, one midterm exam, attendance and projects: 
+* **Homework** - Weekly homework assignments (Weeks 1-8) will contain programming problems that reinforce the concepts covered in lecture. Some assignments build on previous ones, so make sure each one is working before moving on. There is no homework in Week 9; instead, you will be given practice problems to help you prepare for the final exam. All homework will be due and out on **Friday @ 11:59pm**. 
 
-* **Homework** - The weekly homework assignments will contain practice problems to help enforce the concepts learned during a lecture.
+* **Quizzes** - There will be two short (10-15 minute) quizzes at the start of class in Weeks 3 and 8. The quizzes are based directly on your homework and are meant to verify that you completed the assignments yourself.
 
-* **Milestones** - The course work for the second half of the course revolves around building a course project in two parts. Each part of the project is represented as a milestone. Details about the course project and its parts will be presented by the instructor later in the course.  
+* **Attendance** - In order to receive your full attendance weight, you must do the following:
 
-* **Attendance** - In order to receive you full attendance weight, you must do the following 
-   1. Attend every lecture (either in-person or remotely). If you cannot attend a lecture then you must reach out to the instructor letting them know you won't be able to attend. 
-   2. You must watch any specified pre-recorded lectures. We will look at the statistics on Panopto to ensure you watch the videos. 
+  1. Attend every lecture in person. If you cannot attend a lecture, you must reach out to the instructor ahead of time letting them know you won't be able to attend.
+  2. Watch the pre-recorded lecture material for each week. We will look at the statistics on Panopto to ensure you watch the videos.
 
-   As long as you continuously do those two main points you will receive full credit for attendance. 
+  As long as you consistently do those two things, you will receive full credit for attendance.
 
-* **Exam** - There will be one exam in the course. Please see the *Exams* section for more details. 
+* **Exams** - There will be two exams in the course: a midterm in Week 6 and a final during finals week (Week 10). Please see the *Exams* section for more details.
 
-All homework will be due and out on **Wednesday @ 11:59pm**.  
+Assignment Rubric 
+==================
+The following general rubric will be used to grade your coding problems in your homework and projects. The rubric
+allows for more transparency on how your assignments are graded. Short answer questions and written work will be more subjective. 
 
-Please see the `Assignments Rubric <assignments/index.html>`__ page for
-more details on how the assignments will be graded.
 
-Exams 
-~~~~~~~~~~~~~~~~~~~~~~~
-There will be one exam in this course. The exam will be a mixture of coding exercises and short-answer questions. The exam will be in-person during our normal classroom time.
+- **Completeness**: This score will be determined by the result of running a series of automated tests on your code. The tests check whether your code implements the tasks we ask you to implement in the assignment and, thus, are a good measure of how *complete* your code is. Completeness is an **all or nothing** grading item. This means that there will be no partial credit for this section. Either you pass the tests or you do not. 
+    
+- **Correctness**: This score encompasses issues with your code that, while not explicitly captured by the tests, could lead to incorrect behavior (or simply neglect to implement something we told you to implement).
 
-+-------------+--------------+-----------------------------------------------+
-| Exam        | Time Limit   | Date                                          |
-+=============+==============+===============================================+
-| Quarter Exam| 120 minutes  |  **February 24th @ 7:30pm**                   |
-+-------------+--------------+-----------------------------------------------+
+  We will usually provide you some hints on what we will be looking out for in this component of the rubric. Please note that this section of the rubric will never re-penalize you for a failure that is already captured by the tests. So, if your code fails to implement something we told you to implement, but that is already captured by the tests, we would not re-penalize you here.
+       
+- **Design & Style**: This score will be determined by “qualities, many of which are intangible, that don’t have to do with (and exist to some extent independently of) the correct operation of your code.” (thanks to Adam Shaw for this concise phrasing). For example, in many assignments you will have to decompose your code into multiple functions, where that decomposition is up to you. Whether your decomposition makes sense and is well designed would be evaluated in this score.
 
-The exam location is in our normal classroom at the same time. There are no make-up exam in this class. There also will not be any earlier exam taken unless due to extraordinary circumstances such as an medical emergency.
+  For style, we will generally be looking at the following: 
+  
+  - *Documenting functions*: Every top-level function written by you must have a comment documenting its purpose.
+  - *Clarity*: Your code must be easy to read and understand. This is a fairly subjective aspect, but common deductions for lack of clarity include using variables without descriptive names, writing convoluted code that would be easier to understand with more code comments, using magic numbers, etc.
+
+
+Quizzes and Exams
+-----------------
+
+There will be two quizzes and two exams in this course. All quizzes and exams are held in person, in our normal lecture room, at the start of your section's regular class time. Please arrive at least 5 minutes early to ensure you are seated and ready to begin. We will not provide addtional time for late arrivals. More information about the content and format of the quizzes and exams will be provided in closer to the respective dates.
+
++----------------+--------------+-------------------------------------------------+
+| Assessment     | Time Limit   | Date                                            |
++================+==============+=================================================+
+| Quiz 1         | 15 minutes   | | **Tuesday Section: October 13th @ 5:30pm**    |
+|                |              | | **Wednesday Section: October 14th @ 2:30pm**  |
++----------------+--------------+-------------------------------------------------+
+| Midterm Exam   | 60 minutes   | | **Tuesday Section: November 3rd @ 5:30pm**    |
+|                |              | | **Wednesday Section: November 4th @ 2:30pm**  |
++----------------+--------------+-------------------------------------------------+
+| Quiz 2         | 15 minutes   | | **Tuesday Section: November 17th @ 5:30pm**   |
+|                |              | | **Wednesday Section: November 18th @ 2:30pm** |
++----------------+--------------+-------------------------------------------------+
+| Final Exam     | 90 minutes   | | **Tuesday Section: December 8th @ 5:30pm**    |
+|                |              | | **Wednesday Section: December 9th @ 2:30pm**  |
++----------------+--------------+-------------------------------------------------+
+
+The exams are cumulative, but each one focuses on the material covered since the previous quiz or exam.
+
+There are no make-up quizzes or exams in this course unless you have a medical emergency with documentation. Interviews and other job-related events do not count, so please mark these dates on your calendar now and plan to attend.
 
 Course Software 
-~~~~~~~~~~~~~~~~~~~~~~~
-Bash and C will be the **required** language to code all programming assignment. You do not need to know the language in order to take this course. 
-If you haven't already learned it then you will learn it as the course progresses. I will provide a rationale for the languages during the 
-first lecture. **Please note this not a C programming class**. We will learn just enough of the C language to see how we can use it to to 
-develop applications that interacts with a Unix system. 
+-----------------
+C is the **required** language for all programming assignments. You do not need to know C before taking this course; you will learn it as the course progresses, and I will explain why we use C during the first lecture. **Please note this is not a C programming class.** We will learn enough of the language to understand how programs interact with memory and the operating system, but we will not cover every corner of C.
 
-Please make sure you have following software installed for this course:
+Please make sure you have the following software installed for this course:
 
-- `Clang <https://clang.llvm.org>`__ If you are running on macOS or linux then you already have this installed. If you are running a Windows machine then you'll need to download a C compiler.
-- `Git <http://git-scm.com/downloads/>`__
--  Text editor (suggestion, not required): `Visual Studio Code <https://code.visualstudio.com>`__ 
--  IDE (suggestion, not required): `CLion <https://www.jetbrains.com/clion/>`__
+- **A C compiler.** `GCC <https://gcc.gnu.org>`__ is preferred. On macOS, the default compiler is `Clang <https://clang.llvm.org>`__, which is fine for this course (run ``xcode-select --install`` if it is not already installed). Most Linux distributions include GCC. On Windows, we recommend installing `WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`__ and using GCC inside it.
+- `Git <https://git-scm.com/downloads>`__
+- Text editor (suggestion, not required): `Visual Studio Code <https://code.visualstudio.com>`__
+- IDE (suggestion, not required): `CLion <https://www.jetbrains.com/clion/>`__
 
-The course software is also accessible via logging in remotely to a CS Linux Machine. We will explain how to do this during the first week of the quarter. 
+Each student will be given access to a course repository, which you will use to submit your homework. More details will be provided during the first week of the quarter.
+
+The course software is also available by logging in remotely to a CS Linux machine. We will explain how to do this during the first week of the quarter.
 
 Grading
 -------
@@ -88,14 +126,21 @@ Grading
 Your final grade will be based on the following:
 
 +----------------------------------------------+-----+
-| Homework 1-6 (5% each)                       | 30% |
+| Homework                                     | 30% |
 +----------------------------------------------+-----+
-| Project                                      | 25% |
+| Quiz 1                                       | 5%  |
 +----------------------------------------------+-----+
-| Quarter Exam                                 | 40% |
+| Quiz 2                                       | 5%  |
++----------------------------------------------+-----+
+| Midterm Exam                                 | 20% |
++----------------------------------------------+-----+
+| Final Exam                                   | 30% |
 +----------------------------------------------+-----+
 | Attendance                                   | 5%  |
 +----------------------------------------------+-----+
+
+Final Grade Boundaries
+=========================
 
 Grades are *not* curved in this class or, at least, not in the traditional sense.
 We use a standard set of grade boundaries:
@@ -119,7 +164,7 @@ a B+ is lowered).
 .. _late_submissions:
 
 Late submissions
-~~~~~~~~~~~~~~~~
+==================
 
 You are allowed to make **at most two** late submissions on the programming assignments. You are allowed to make **at most two** 
 late submissions on the programming assignments. This is total across all assignments and not on a  per-assignment basis. 
@@ -150,7 +195,7 @@ extensions is precisely to give you some flexibility in weeks when you
 are busier than usual. Additionally mild COVID or common cold illness is also does not qualify as an extraordinary circumstance.  
 
 Regrades
-~~~~~~~~
+=========
 
 We sometimes make mistakes, and are happy to review any incorrect
 grading decision.
@@ -200,45 +245,55 @@ Please allow time for the course staff to review your regrade request. We cannot
 
 Books
 -----
-This course will not have a required textbook; although, for those students who may find it helpful to know
-the topics we will discuss each week, readings will come from the text:
 
--  *The Linux Programming Interface: A Linux and UNIX System Programming Handbook by Michael Kerrisk*
--  *Computer Systems: A Programmer's Perspective (3rd Edition) by Bryant, & Randal O'Hallaron*
+This course does not have a required textbook. The books below are optional and are meant to help clarify anything that was confusing in class. Each week I will list suggested readings from them on the week's schedule.
 
-and will be shown on the course schedule. Along with these readings and the lecture notes, students may
-find the following references helpful in understanding the course material:
+-  *C Programming: A Modern Approach, 2nd Edition* by K. N. King
+-  *Advanced Programming in the UNIX Environment, 3rd Edition* by W. Richard Stevens and Stephen A. Rago
 
--  *C Programming: A Modern Approach, 2nd Edition by K. N. King*
+King's book covers the C portion of the course, and APUE covers system calls, file I/O, processes, and signals.
+
+These books are recommended for students who want to deepen their understanding of the course material and are available in the library or online.
 
 
 Policies
---------        
+---------
 
 Policy on academic honesty
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===========================
 
 We take academic honesty **very** seriously in this class. Please make sure to
 read our `Academic Honesty <honesty.html>`_ page.
 
+
 Policy on Generative AI
-~~~~~~~~~~~~~~~~~~~~~~~
-Using generative AI tools should be viewed as a means to enhance learning and explore new avenues, rather than as a substitute for rigorous study and practice. While generative AI tools can assist in generating content, 
-you are expected to have a clear understanding of the concepts being explored, the generated output, and its accuracy. Relying solely on AI-generated content without understanding the underlying principles is discouraged. 
-Assessments and exams are designed to evaluate your understanding of concepts and problem-solving skills. Relying solely on AI tools for assessment preparation may hinder your mastery of essential skills.
+========================
 
-Specifically, you are allowed to use Generative AI in this course as long as correct citation is provide: 
+You may use generative AI tools (ChatGPT, Claude, Copilot, etc.) in this course **as a tutor only**. Good uses include:
 
-- The use of AI tools, such as ChatGPT or Dall-E 2, for this course is allowed for specific assignments only when determined to be in support of the course learning goals. Assignments in which AI tools are permitted will be clearly identified by the instructor and noted in the assignment directions. You are not required to use AI tools, but if you choose to use them for any part of the assignment (from brainstorming to text editing), you must use proper citation (please use `APA citation format <https://apastyle.apa.org/blog/how-to-cite-chatgpt>`__  ). Failure to properly cite AI tools is considered a violation of the University of Chicago's Academic Honesty and Plagiarism policy. If you are unclear if something is an AI Tool, please check with your instructor.  (CCTL, UChicago) 
+- Asking it to explain a topic from lecture that you did not understand.
+- Asking how a C construct works, such as pointer arithmetic or a ``struct``.
+- Asking what a library function or system call does and how it is typically used.
 
+You are **not** permitted to have AI implement any portion of your work. This includes writing, completing, fixing, or rewriting your code.
 
-**Improperly citing or no citation when a Generative AI resource was used in assignment will be treated as an academic misconduct case.**
+If you use a function or technique you learned about from AI or any other online source, you must cite it in a comment at the top of the file where it is used. For example:
 
+.. code-block:: c
 
-The Generative AI policy comes from the hardwork of the *Citation: Generative AI: Policy Guidance for MPCS Faculty* group. 
+   /*
+    * Sources:
+    *   - Claude: asked how strtok() splits a string on a delimiter.
+    *   - https://man7.org/linux/man-pages/man3/strtok.3.html
+    */
+
+Keep in mind that the quizzes and exams are in person, without AI, and are closely tied to the homework. If AI did the thinking for you on an assignment, it will show on the exams.
+
+**Failure to follow this policy, including using AI to implement your work or not citing an outside source, will result in a 0% on that assignment and/or an F in the course, and will be reported as academic misconduct under the University of Chicago's Academic Honesty and Plagiarism policy.**
+
 
 Diversity statement
--------------------
+====================
 
 The University of Chicago is committed to diversity and rigorous
 inquiry that arises from multiple perspectives. We concur with that
@@ -259,7 +314,7 @@ roster, or preferred gender pronouns you would like us to use, please
 let us know.
 
 Disability statement
---------------------
+=====================
 
 If there are circumstances that make our learning environment and
 activities difficult, please let us know. We will maintain the
