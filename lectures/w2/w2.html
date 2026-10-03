@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Week 1: Introduction to Systems Programming and C Basics &#8212; MPCS 51900 - Introduction to Systems Programming  documentation</title>
+    <title>Week 2: Strings, Pointers, and Memory &#8212; MPCS 51900 - Introduction to Systems Programming  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
     <link rel="stylesheet" type="text/css" href="../../_static/chiweb.css?v=9805d56b" />
@@ -91,78 +91,88 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Week 1: Introduction to Systems Programming and C Basics</a><ul>
-<li><a class="reference internal" href="#topics">Topics</a></li>
-<li><a class="reference internal" href="#pre-recorded-lectures">Pre-recorded Lectures</a></li>
+<li><a class="reference internal" href="#">Week 2: Strings, Pointers, and Memory</a><ul>
+<li><a class="reference internal" href="#reading">Reading</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#pre-recorded-lectures">Pre-recorded Lectures</a><ul>
 <li><a class="reference internal" href="#resources-readings">Resources/Readings</a></li>
-<li><a class="reference internal" href="#synchronous-sessions-in-person-lecture">Synchronous Sessions (In-person Lecture)</a></li>
+<li><a class="reference internal" href="#synchronous-sessions-in-person-lecture">Synchronous Sessions (In-person Lecture)</a><ul>
+<li><a class="reference internal" href="#week-1">Week 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <div id="sourcelink">
-  <a href="../../_sources/lectures/w1/w1.rst.txt"
+  <a href="../../_sources/lectures/w2/w2.rst.txt"
      rel="nofollow">Source</a>
 </div>
         </div>
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <section id="week-1-introduction-to-systems-programming-and-c-basics">
-<h1>Week 1: Introduction to Systems Programming and C Basics<a class="headerlink" href="#week-1-introduction-to-systems-programming-and-c-basics" title="Link to this heading">¶</a></h1>
-<p>This week we start with why systems programming matters and why C is the
-language for it. We then cover how a C program goes from source code to a
-running executable, and move quickly through C syntax. Since you already know
-how to program, we focus on the places where C differs from languages like
-Python and Java.</p>
-<section id="topics">
-<h2>Topics<a class="headerlink" href="#topics" title="Link to this heading">¶</a></h2>
+  <section id="week-2-strings-pointers-and-memory">
+<h1>Week 2: Strings, Pointers, and Memory<a class="headerlink" href="#week-2-strings-pointers-and-memory" title="Link to this heading">¶</a></h1>
+<p>We finish strings from last week, then move on to pointers and managing
+memory yourself.</p>
 <ul class="simple">
-<li><p>What systems programming is, and what you’ll build this quarter</p></li>
-<li><p>Why C: low-level vs. high-level languages</p></li>
-<li><p>The structure of a C program, compiling with <code class="docutils literal notranslate"><span class="pre">gcc</span></code>, and what each
-compilation stage does</p></li>
-<li><p>Compiler warnings: what they mean and why we treat them as bugs</p></li>
-<li><p>Static typing, primitive types, and type sizes</p></li>
-<li><p>Input and output with <code class="docutils literal notranslate"><span class="pre">printf</span></code> and <code class="docutils literal notranslate"><span class="pre">scanf</span></code></p></li>
-<li><p>Operators, control flow, and functions</p></li>
-<li><p>Arrays, structs, <code class="docutils literal notranslate"><span class="pre">typedef</span></code>, and strings</p></li>
+<li><p><strong>Strings:</strong> char arrays ending in <code class="docutils literal notranslate"><span class="pre">'\0'</span></code>, passing strings to
+functions, and <code class="docutils literal notranslate"><span class="pre">&lt;string.h&gt;</span></code></p></li>
+<li><p><strong>Pointers:</strong> addresses, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, and common pointer
+pitfalls</p></li>
+<li><p><strong>Pointers and functions:</strong> call by value, passing pointers to change a
+caller’s variables, and returning multiple values</p></li>
+<li><p><strong>Pointers and arrays:</strong> array-to-pointer conversion, pointer arithmetic,
+and comparing strings</p></li>
+<li><p><strong>Dynamic memory:</strong> the stack vs. the heap, <code class="docutils literal notranslate"><span class="pre">malloc</span></code> and <code class="docutils literal notranslate"><span class="pre">free</span></code>,
+dangling pointers, memory leaks, and pointers to structs</p></li>
+<li><p><strong>Command-line arguments:</strong> <code class="docutils literal notranslate"><span class="pre">argc</span></code>, <code class="docutils literal notranslate"><span class="pre">argv</span></code>, and the environment</p></li>
 </ul>
+<section id="reading">
+<h2>Reading<a class="headerlink" href="#reading" title="Link to this heading">¶</a></h2>
+<p>K.N. King, <em>C Programming: A Modern Approach</em>, chapters 11, 12, 13, and 17.</p>
+</section>
 </section>
 <section id="pre-recorded-lectures">
-<h2>Pre-recorded Lectures<a class="headerlink" href="#pre-recorded-lectures" title="Link to this heading">¶</a></h2>
+<h1>Pre-recorded Lectures<a class="headerlink" href="#pre-recorded-lectures" title="Link to this heading">¶</a></h1>
 <p><strong>Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week.</strong></p>
-<p>The pre-recorded lectures are available here: <a href="#id1"><span class="problematic" id="id2">`Week 1 Videos &lt;&gt;`_</span></a>.</p>
-</section>
-</section>
+<p>The pre-recorded lectures are available here: <a href="#id1"><span class="problematic" id="id2">`Week 2 Videos &lt;&gt;`_</span></a>.</p>
+<p>…</p>
 <section id="resources-readings">
-<h1>Resources/Readings<a class="headerlink" href="#resources-readings" title="Link to this heading">¶</a></h1>
+<h2>Resources/Readings<a class="headerlink" href="#resources-readings" title="Link to this heading">¶</a></h2>
 <p>For this module, your focus should be to learn the basic syntax of the shell scripting.</p>
 <ul class="simple">
 <li><p>KNN, <em>C Programming: A Modern Approach</em>, chapters 1-9, 13.1-13.5,16.1-16.3</p></li>
 </ul>
 </section>
 <section id="synchronous-sessions-in-person-lecture">
-<h1>Synchronous Sessions (In-person Lecture)<a class="headerlink" href="#synchronous-sessions-in-person-lecture" title="Link to this heading">¶</a></h1>
+<h2>Synchronous Sessions (In-person Lecture)<a class="headerlink" href="#synchronous-sessions-in-person-lecture" title="Link to this heading">¶</a></h2>
 <p>As a reminder here are the dates and times for the synchronous session for this module:</p>
+<section id="week-1">
+<h3>Week 1<a class="headerlink" href="#week-1" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt>Dates/Times</dt><dd><ul>
-<li><p>Section 1: <strong>Tuesday September 29th 5:30pm-8:30pm</strong></p></li>
-<li><p>Section 2: <strong>Wednesday September 30th 2:30pm-5:20pm</strong></p></li>
+<li><p>Section 1: <strong>Tuesday October 6th 5:30pm-8:30pm</strong></p></li>
+<li><p>Section 2: <strong>Wednesday October 7th 2:30pm-5:20pm</strong></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>Session Outline</dt><dd><ul>
-<li><p>Course logistics and systems programming overview</p></li>
-<li><p>C Basics</p></li>
+<li><p>Strings,</p></li>
+<li><p>Pointers</p></li>
+<li><p>Dynamic Memory Allocation</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
+</section>
+</section>
 </section>
 
 

@@ -1,4 +1,4 @@
-M1: Introduction to Systems Programming and C Basics 
+Week 1: Introduction to Systems Programming and C Basics 
 -----------------------------------------------------
 This week we start with why systems programming matters and why C is the
 language for it. We then cover how a C program goes from source code to a
@@ -22,11 +22,11 @@ Topics
 
 Pre-recorded Lectures
 ======================
-**Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week for a module.**
+**Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week.**
 
-The pre-recorded lectures are available here: `M1 Videos <>`_.
+The pre-recorded lectures are available here: `Week 1 Videos <>`_.
 
-... 
+ 
 
 Resources/Readings 
 -------------------

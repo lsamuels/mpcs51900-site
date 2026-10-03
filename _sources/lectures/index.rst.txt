@@ -4,7 +4,7 @@ Lectures
 ==============
 
 - `Week 1: Introduction to systems programming and C basics <./w1/w1.html>`__
-.. - `Week 2: C continued and pointer basics <./w2/w2.html>`__
+- `Week 2: Strings, Pointers, and Memory <./w2/w2.html>`__
 .. - `Week 3: Memory model and memory bugs <./w3/w3.html>`__
 .. - `Week 4: Memory hierarchy (caches/locality and virtual memory) <./w4/w4.html>`__
 .. - `Week 5: System Calls <./w5/w5.html>`__

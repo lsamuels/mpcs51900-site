@@ -1,0 +1,51 @@
+Week 2: Strings, Pointers, and Memory
+=====================================
+
+We finish strings from last week, then move on to pointers and managing
+memory yourself.
+
+* **Strings:** char arrays ending in ``'\0'``, passing strings to
+  functions, and ``<string.h>``
+* **Pointers:** addresses, ``&`` and ``*``, ``NULL``, and common pointer
+  pitfalls
+* **Pointers and functions:** call by value, passing pointers to change a
+  caller's variables, and returning multiple values
+* **Pointers and arrays:** array-to-pointer conversion, pointer arithmetic,
+  and comparing strings
+* **Dynamic memory:** the stack vs. the heap, ``malloc`` and ``free``,
+  dangling pointers, memory leaks, and pointers to structs
+* **Command-line arguments:** ``argc``, ``argv``, and the environment
+
+Reading
+-------
+
+K.N. King, *C Programming: A Modern Approach*, chapters 11, 12, 13, and 17.
+
+Pre-recorded Lectures
+======================
+**Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week.**
+
+The pre-recorded lectures are available here: `Week 2 Videos <>`_.
+
+... 
+
+Resources/Readings 
+-------------------
+For this module, your focus should be to learn the basic syntax of the shell scripting.
+
+*  KNN, *C Programming: A Modern Approach*, chapters 1-9, 13.1-13.5,16.1-16.3
+
+Synchronous Sessions (In-person Lecture) 
+-----------------------------------------
+As a reminder here are the dates and times for the synchronous session for this module:
+
+Week 1 
+~~~~~~~
+- Dates/Times
+   -  Section 1: **Tuesday October 6th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday October 7th 2:30pm-5:20pm** 
+- Session Outline 
+   - Strings, 
+   - Pointers 
+   - Dynamic Memory Allocation 
+   
