@@ -42,6 +42,22 @@ Here is the information that you will see when the hybrid/remote office hours po
     let us know if you would prefer not to do this. You will know when you are coming up soon because 
     the instructor or TA will click the “Resolved” button to indicate we have completed a session.
 
-TBD
++-----------+-----------------+--------------------------+-------------------------------------+
++ **Day**   | **Time**        | **Who**                  | **Type (Location)**                 | 
++-----------+-----------------+--------------------------+-------------------------------------+
+| Monday    | 12:30pm-2:00pm  | Lamont Samuels           | Hybrid (JCL 398D/Zoom)              |
++-----------+-----------------+--------------------------+-------------------------------------+
+| Tuesday   | 11:00am-12:30pm | Nalin Prabhath           |  Remote (Zoom)                      |     
++-----------+-----------------+--------------------------+-------------------------------------+
+| Wednesday | 12:00pm-1:00pm  | Lamont Samuels           | Hybrid (JCL 398D/Zoom)              |
++-----------+-----------------+--------------------------+-------------------------------------+
+| Thursday  | 2:00pm-3:30pm   | Akshat Singhania         |  JCL Common Area 3B                 | 
++-----------+-----------------+--------------------------+-------------------------------------+
+| Friday    | 11:00am-12:30pm | Nalin Prabhath           |  Remote (Zoom)                      |    
++-----------+-----------------+--------------------------+-------------------------------------+
+| Friday    | 2:00pm-3:30pm   | Akshat Singhania         | JCL Common Area 3B                  | 
++-----------+-----------------+--------------------------+-------------------------------------+
+
+
 
 
