@@ -25,9 +25,17 @@ Pre-recorded Lectures
 ======================
 **Note: Professor Samuels will state on Ed when the prerecorded videos are ready to be viewed each week.**
 
-The pre-recorded lectures are available here: `Week 2 Videos <>`_.
+The pre-recorded lectures are available here: `Week 2 Videos <https://uchicago.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=b91045e7-cef2-41f3-a76b-b4de01270558>`_.
 
-... 
+Video Outline 
+~~~~~~~~~~~~~~
+- 2.1: Pointer and String Comparison
+- 2.2: Introduction to Dynamic Memory Allocation
+- 2.3: Dynamically Allocating an Array
+- 2.4: Dynamically Allocating Structs
+- 2.5: Command-Line Arguments
+
+
 
 Resources/Readings 
 -------------------

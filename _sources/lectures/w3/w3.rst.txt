@@ -1,0 +1,53 @@
+Week 3: Memory Model and Memory Bugs
+====================================
+
+Overview
+--------
+
+This week we will complete our tour of pointers and then we will look at where a running
+program's memory lives and what goes wrong when we misuse it. We end with
+how real C programs are split into files, packaged into libraries, and
+built with ``make``.
+
+Topics
+------
+
+- Enumerations, and catching non-standard C with ``-pedantic``
+- Pointers to pointers and changing a caller's pointer
+- Arrays of strings, ``argv``, and 2D arrays (automatic and dynamic)
+- ``realloc``, ``memcpy``, ``memmove``, and ``memset``
+- A process's virtual address space: text, data, BSS, heap, and stack
+- Common memory bugs: uninitialized reads, buffer overflows, use after
+  free, bad frees, and leaks
+- Finding memory bugs with AddressSanitizer and Valgrind
+- Header files, separate compilation, and static and shared libraries
+- Makefiles
+
+Pre-recorded Lectures
+---------------------
+
+TBD
+
+Readings
+--------
+
+- K.N. King, *C Programming: A Modern Approach*: 8.2, 12.4, 13.7, 15,
+  16.5, 17.3, 17.4, 17.6, and 23.6
+- Stevens and Rago, *Advanced Programming in the UNIX Environment*: 7.6–7.8
+
+
+Synchronous Sessions (In-person Lecture) 
+-----------------------------------------
+As a reminder here are the dates and times for the synchronous session for this module:
+
+Week 1 
+~~~~~~~
+- Dates/Times
+   -  Section 1: **Tuesday, October 13th,5:30pm-8:30pm** 
+   -  Section 2: **Wednesday October 14th 2:30pm-5:20pm** 
+- Session Outline 
+   - Quiz  
+   - Enums 
+   - Pointers to Pointers 
+   - The Memory Model [if time permits]
+   
