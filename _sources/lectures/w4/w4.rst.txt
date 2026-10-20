@@ -1,0 +1,53 @@
+Week 4: The Memory Model and the Memory Hierarchy
+=================================================
+
+This week we will look atg where every byte of a running program lives, and how to find
+the memory bugs C won't catch. We then follow an address from your code to
+real RAM through registers, caches, and virtual memory, and finish with
+static and shared libraries.
+
+Topics
+------
+
+* Processes and the virtual address space: user space vs. kernel space
+* Segments: ``.text``, ``.rodata``, ``.data``, ``.bss``, heap, stack, and the
+  memory-mapped region
+* ``static`` local variables and read-only string literals
+* Common memory bugs: out of bounds, uninitialized reads, use after free,
+  double free, and leaks
+* Finding bugs with ``valgrind`` (and its most useful flags),
+  AddressSanitizer (``-fsanitize=address``), and ``gdb``
+* Registers and the memory hierarchy
+* Caches: cache lines, hits and misses, and locality
+* Why loop order matters for 2D arrays (row-major order)
+* Virtual memory: pages, page tables, page hits, page faults, and demand
+  paging
+* Static (``.a``) and shared (``.so``) libraries
+
+Pre-recorded Lectures
+---------------------
+
+* TBD
+
+Resources/Readings
+------------------
+
+* APUE, sections 7.6 to 7.8 (memory layout of a C program, shared libraries,
+  memory allocation)
+* KNN, *C Programming: A Modern Approach*, section 18.2 (storage classes)
+
+Synchronous Sessions (In-person Lecture)
+----------------------------------------
+
+- Dates/Times
+   -  Section 1: **Tuesday October 20th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday October 21st 2:30pm-5:20pm** 
+- Session Outline 
+   -  The memory model
+   -  Memory bugs, valgrind, and gdb
+   -  Registers and caches
+   - Virtual memory
+   - Static and shared libraries [if time permits]
+   
+
+   

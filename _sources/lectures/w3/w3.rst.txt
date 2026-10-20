@@ -1,13 +1,11 @@
-Week 3: Memory Model and Memory Bugs
-====================================
+Week 3: Pointers to Pointers and Building Programs
+==================================================
 
 Overview
 --------
 
-This week we will complete our tour of pointers and then we will look at where a running
-program's memory lives and what goes wrong when we misuse it. We end with
-how real C programs are split into files, packaged into libraries, and
-built with ``make``.
+This week finishes our tour of pointers and dynamic memory, then looks at
+how real C programs are split across files and built with ``make``.
 
 Topics
 ------
@@ -15,39 +13,40 @@ Topics
 - Enumerations, and catching non-standard C with ``-pedantic``
 - Pointers to pointers and changing a caller's pointer
 - Arrays of strings, ``argv``, and 2D arrays (automatic and dynamic)
-- ``realloc``, ``memcpy``, ``memmove``, and ``memset``
-- A process's virtual address space: text, data, BSS, heap, and stack
-- Common memory bugs: uninitialized reads, buffer overflows, use after
-  free, bad frees, and leaks
-- Finding memory bugs with AddressSanitizer and Valgrind
-- Header files, separate compilation, and static and shared libraries
-- Makefiles
+- ``realloc``, ``calloc``, ``memcpy``, ``memmove``, and ``memset``
+- Header files, include guards, and separate compilation
+- Reading link errors, and linking the math library with ``-lm``
+- Linkage with ``extern`` and ``static``
+- Forward-declared types and encapsulation with opaque structs
+- Makefiles: rules, variables, pattern rules, ``.PHONY``, and ``all``
+- A typical C project layout
 
 Pre-recorded Lectures
 ---------------------
 
-TBD
+
+The pre-recorded lectures are available here: `Week 3 Videos <https://uchicago.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=938266f5-d21d-4e2d-b9e3-b4e601541c08>`_.
+
+Video Outline 
+~~~~~~~~~~~~~~
+- 3.1: Calloc and Moving Memory 
+- 3.2: Building Programs 
+- 3.3: Makefiles 
+
 
 Readings
 --------
 
 - K.N. King, *C Programming: A Modern Approach*: 8.2, 12.4, 13.7, 15,
   16.5, 17.3, 17.4, 17.6, and 23.6
-- Stevens and Rago, *Advanced Programming in the UNIX Environment*: 7.6–7.8
 
+Synchronous Sessions
+--------------------
 
-Synchronous Sessions (In-person Lecture) 
------------------------------------------
-As a reminder here are the dates and times for the synchronous session for this module:
-
-Week 1 
-~~~~~~~
-- Dates/Times
-   -  Section 1: **Tuesday, October 13th,5:30pm-8:30pm** 
-   -  Section 2: **Wednesday October 14th 2:30pm-5:20pm** 
+- Section 1: Tuesday, October 13, 5:30-8:30 pm
+- Section 2: Wednesday, October 14, 2:30-5:20 pm
 - Session Outline 
-   - Quiz  
+   - Quiz 
    - Enums 
    - Pointers to Pointers 
-   - The Memory Model [if time permits]
    
