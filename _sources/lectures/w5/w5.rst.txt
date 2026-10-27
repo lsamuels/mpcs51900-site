@@ -1,0 +1,45 @@
+Week 5: System Calls
+====================
+
+This week we look at how a C program gets the operating system to do work for
+it. We cover why a kernel exists, how the CPU switches into it, and how library
+functions like ``printf`` and ``malloc`` turn into system calls underneath.
+The end of lecture is set aside for midterm review.
+
+Topics
+------
+
+* User mode vs. kernel mode, and why programs can't touch hardware or kernel
+  memory directly
+* Exceptions: interrupts, traps, faults, and aborts
+* System calls on x86-64: the ``syscall`` instruction, call numbers, and
+  argument registers
+* ``printf`` vs. ``write`` vs. ``syscall``, and how stdio buffering changes
+  when output appears
+* Watching a program's system calls with ``strace``
+* Library functions vs. system calls, ``man`` sections 2 and 3, and why
+  ``-std=c17`` hides some POSIX functions
+* Basic error handling: ``-1``, ``errno``, ``perror``, and ``strerror``
+* What ``malloc`` asks the kernel for: ``brk`` and ``mmap``
+
+Readings
+--------
+
+* APUE 1.7 (Error Handling) and 1.11 (System Calls and Library Functions)
+
+Synchronous Sessions (In-person Lecture)
+----------------------------------------
+
+- Dates/Times
+   -  Section 1: **Tuesday October 27th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday October 28th 2:30pm-5:20pm** 
+- Session Outline 
+   - Virtual memory
+   - Static and shared libraries 
+   - User space vs Kernel space 
+   - Exceptions 
+   - System calls 
+   - Midterm Review 
+   
+
+   
