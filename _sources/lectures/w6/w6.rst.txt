@@ -34,9 +34,9 @@ The pre-recorded lectures are available here: `Week 6 Videos <>`_.
 Video Outline 
 ~~~~~~~~~~~~~~
 - 6.1: Files and Descriptors and Unix I/O 
-- 2.2: File Errors and Sharing Open Files 
-- 2.3: Standard I/O (Part 1)
-- 2.4: Standard I/O (Part 2)
+- 6.2: File Errors and Sharing Open Files 
+- 6.3: Standard I/O (Part 1)
+- 6.4: Standard I/O (Part 2)
 
 
 Synchronous Sessions (In-person Lecture)
