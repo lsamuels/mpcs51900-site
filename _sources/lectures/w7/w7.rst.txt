@@ -1,0 +1,47 @@
+Week 7: File I/O and Processes
+==============================
+
+This week we explore the File I/O in Unix, then begin processes:
+how a program creates another process, waits for it, and runs a new program
+in it. 
+
+File I/O
+--------
+
+* Files and file descriptors
+* Unix I/O: ``open``, ``read``, ``write``, ``lseek``, ``close``, and short counts
+* Error handling: ``errno``, ``perror``, ``EFAULT``, and wrapper functions
+* Sharing open files: the kernel's descriptor, open file, and v-node tables; ``dup2``
+* Standard I/O: ``FILE *``, ``fopen``, ``fgets``, buffering, and when to use stdio vs. Unix I/O
+
+Processes
+---------
+
+* What a process is: context switching and private address spaces
+* Process IDs: ``getpid`` and ``getppid``
+* Ending a process with ``exit`` and exit status
+* Creating processes with ``fork``, and reasoning about output with process graphs
+* How ``fork`` interacts with open files and stdio buffers
+* Zombies and reaping with ``wait`` and ``waitpid``
+* Running programs with the ``exec`` family
+* The fork, exec, wait pattern; a simple shell loop; I/O redirection with ``dup2``
+* Process states
+
+Reading
+-------
+
+* APUE: Chapter 3 (3.1-3.12), 4.2-4.5, 5.1-5.8, and Chapter 8 (8.1-8.6, 8.9-8.10)
+* King: Chapter 22
+
+Synchronous Sessions (In-person Lecture)
+----------------------------------------
+
+- Dates/Times
+   -  Section 1: **Tuesday November 10th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday November 11th 2:30pm-5:20pm** 
+- Session Outline 
+   - File I/O 
+   - Introduction to Processes 
+   - Creating Processes [if time permits]
+
+   

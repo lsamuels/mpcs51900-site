@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 7: File I/O and Processes &#8212; MPCS 51900 - Introduction to Systems Programming  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/chiweb.css?v=9805d56b" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="defer" src="../../_static/rmsearch.js?v=9704a757"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          MPCS 51900</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../syllabus.html">Syllabus</a></li>
+                <li><a href="../../calendar.html">Calendar</a></li>
+                <li><a href="../index.html">Lectures</a></li>
+                <li><a href="../../office-hours.html">Office Hours</a></li>
+                <li><a href="https://uchicago-cs.github.io/student-resource-guide/">CS Student Resources</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Week 7: File I/O and Processes</a><ul>
+<li><a class="reference internal" href="#file-i-o">File I/O</a></li>
+<li><a class="reference internal" href="#processes">Processes</a></li>
+<li><a class="reference internal" href="#reading">Reading</a></li>
+<li><a class="reference internal" href="#synchronous-sessions-in-person-lecture">Synchronous Sessions (In-person Lecture)</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../../_sources/lectures/w7/w7.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="week-7-file-i-o-and-processes">
+<h1>Week 7: File I/O and Processes<a class="headerlink" href="#week-7-file-i-o-and-processes" title="Link to this heading">¶</a></h1>
+<p>This week we explore the File I/O in Unix, then begin processes:
+how a program creates another process, waits for it, and runs a new program
+in it.</p>
+<section id="file-i-o">
+<h2>File I/O<a class="headerlink" href="#file-i-o" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Files and file descriptors</p></li>
+<li><p>Unix I/O: <code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, <code class="docutils literal notranslate"><span class="pre">lseek</span></code>, <code class="docutils literal notranslate"><span class="pre">close</span></code>, and short counts</p></li>
+<li><p>Error handling: <code class="docutils literal notranslate"><span class="pre">errno</span></code>, <code class="docutils literal notranslate"><span class="pre">perror</span></code>, <code class="docutils literal notranslate"><span class="pre">EFAULT</span></code>, and wrapper functions</p></li>
+<li><p>Sharing open files: the kernel’s descriptor, open file, and v-node tables; <code class="docutils literal notranslate"><span class="pre">dup2</span></code></p></li>
+<li><p>Standard I/O: <code class="docutils literal notranslate"><span class="pre">FILE</span> <span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">fopen</span></code>, <code class="docutils literal notranslate"><span class="pre">fgets</span></code>, buffering, and when to use stdio vs. Unix I/O</p></li>
+</ul>
+</section>
+<section id="processes">
+<h2>Processes<a class="headerlink" href="#processes" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>What a process is: context switching and private address spaces</p></li>
+<li><p>Process IDs: <code class="docutils literal notranslate"><span class="pre">getpid</span></code> and <code class="docutils literal notranslate"><span class="pre">getppid</span></code></p></li>
+<li><p>Ending a process with <code class="docutils literal notranslate"><span class="pre">exit</span></code> and exit status</p></li>
+<li><p>Creating processes with <code class="docutils literal notranslate"><span class="pre">fork</span></code>, and reasoning about output with process graphs</p></li>
+<li><p>How <code class="docutils literal notranslate"><span class="pre">fork</span></code> interacts with open files and stdio buffers</p></li>
+<li><p>Zombies and reaping with <code class="docutils literal notranslate"><span class="pre">wait</span></code> and <code class="docutils literal notranslate"><span class="pre">waitpid</span></code></p></li>
+<li><p>Running programs with the <code class="docutils literal notranslate"><span class="pre">exec</span></code> family</p></li>
+<li><p>The fork, exec, wait pattern; a simple shell loop; I/O redirection with <code class="docutils literal notranslate"><span class="pre">dup2</span></code></p></li>
+<li><p>Process states</p></li>
+</ul>
+</section>
+<section id="reading">
+<h2>Reading<a class="headerlink" href="#reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>APUE: Chapter 3 (3.1-3.12), 4.2-4.5, 5.1-5.8, and Chapter 8 (8.1-8.6, 8.9-8.10)</p></li>
+<li><p>King: Chapter 22</p></li>
+</ul>
+</section>
+<section id="synchronous-sessions-in-person-lecture">
+<h2>Synchronous Sessions (In-person Lecture)<a class="headerlink" href="#synchronous-sessions-in-person-lecture" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Dates/Times</dt><dd><ul>
+<li><p>Section 1: <strong>Tuesday November 10th 5:30pm-8:30pm</strong></p></li>
+<li><p>Section 2: <strong>Wednesday November 11th 2:30pm-5:20pm</strong></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Session Outline</dt><dd><ul>
+<li><p>File I/O</p></li>
+<li><p>Introduction to Processes</p></li>
+<li><p>Creating Processes [if time permits]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2026, University of Chicago.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
