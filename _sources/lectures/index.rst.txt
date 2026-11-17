@@ -10,5 +10,5 @@ Lectures
 - `Week 5: System Calls <./w5/w5.html>`__
 -  Week 6: Midterm Week (No Lecture)
 - `Week 7: File I/O and Processes <./w7/w7.html>`__
-.. - `Week 8: Signals <./w8/w8.html>`__
+- `Week 8: Signals <./w8/w8.html>`__
 .. - `Week 9: Introduction to Concurrency <./w9/w9.html>`__

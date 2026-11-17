@@ -1,0 +1,32 @@
+Week 8: Signals
+===============
+
+This week covers signals, the simplest form of interprocess communication (IPC).
+
+* What IPC is, and where signals fit among pipes, files, shared memory and sockets
+* What a signal is: its cause, its default action, and the common signals
+* Pending and blocked signals, and why signals are not queued
+* Process groups, foreground and background jobs, and job control (``fg``, ``bg``, ``jobs``)
+* Sending signals with ``kill``, ``raise`` and ``alarm``, and from the keyboard (ctrl-c, ctrl-z)
+* Installing handlers with ``signal`` and ``sigaction``, and how handlers behave across ``fork`` and ``exec``
+* Blocking signals with ``sigprocmask``
+* Writing safe handlers: async-signal-safe functions, ``volatile sig_atomic_t`` flags, and ``EINTR``
+
+Reading
+-------
+
+* APUE 9.4 and 10.1–10.14 (skip 10.7)
+* Optional: APUE 10.16 (``sigsuspend``)
+
+Synchronous Sessions (In-person Lecture)
+----------------------------------------
+
+- Dates/Times
+   -  Section 1: **Tuesday November 10th 5:30pm-8:30pm** 
+   -  Section 2: **Wednesday November 11th 2:30pm-5:20pm** 
+- Session Outline 
+   - Creating Processes Contd [if necessary]
+   - IPC 
+   - Introduction to Signals 
+
+   
