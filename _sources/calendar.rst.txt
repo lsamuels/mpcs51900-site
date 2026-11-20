@@ -19,7 +19,7 @@ In general, assignments are posted on Tuesday preceding their deadline.
     4, Memory hierarchy (caches/locality and virtual memory), HW 4,  HW 3
     5, System Calls, None, HW 4   
     6, "**Midterm Exam**, File I/O", HW 5, None  
-    7, Processes,  HW 6, HW 5
-    8, "**Quiz 2**, Signals", HW 7, HW 6
-    9,  Introduction to Concurrency, None, HW 7
+    7, Processes, None, HW 5
+    8, Signals, HW 6, None
+    9,  "**Quiz 2**, Introduction to Concurrency", None, HW 6
     10, **Final Exam**, None, None 
