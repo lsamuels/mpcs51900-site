@@ -146,12 +146,15 @@ Grades are *not* curved in this class or, at least, not in the traditional sense
 We use a standard set of grade boundaries:
 
 * 95-100: A
-* 90-95: A-
-* 85-90: B+
-* 80-85: B
-* 75-80: B-
-* 70-75: C+
+* 90-94: A-
+* 87-89: B+
+* 83-86: B
+* 80-82: B-
+* 77-79: C+
+* 73-76: C
+* 70-72: C-
 * <70: Dealt on a case-by-case basis
+
 
 We curve only to the extent we might lower the boundaries for one or more letter
 grades, depending on the distribution of the raw scores. We will not raise the
